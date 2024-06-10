@@ -40,8 +40,8 @@ public class LogParser
 {
     public static AccessLog Parse(string logLine)
     {
-        // Пример: 127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 2326
-        var parts = logLine.Split(' ');
+       
+        var parts = logLine.Split('127.0.0.1 ');
         if (parts.Length < 9) throw new FormatException("Invalid log line format");
 
         return new AccessLog
